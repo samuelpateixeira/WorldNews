@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Latest News</string>
+
+    <string-array name="countries">
+        <item>Portugal</item>
+        <item>Reino Unido</item>
+        <item>França</item>
+        <item>Itália</item>
+        <item>Brazil</item>
+    </string-array>
+
+    <string-array name="categories">
+        <item>negócios</item>
+        <item>entertenimento</item>
+        <item>geral</item>
+        <item>saúde</item>
+        <item>ciência</item>
+        <item>desporto</item>
+        <item>tecnologia</item>
+    </string-array>
+</resources>
