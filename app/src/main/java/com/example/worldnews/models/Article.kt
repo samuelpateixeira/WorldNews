@@ -5,7 +5,7 @@ import org.json.JSONObject
 
 class Article {
 
-
+    //region Properties
     var source      : String? = null
     var author      : String? = null
     var title       : String? = null
@@ -16,7 +16,9 @@ class Article {
     var content     : String? = null
     var image       : Bitmap? = null
     var imageLoaded = false
+    //endregion
 
+    //region Constructors
     constructor(
         source      : String?,
         author      : String?,
@@ -40,8 +42,12 @@ class Article {
     constructor(
     ) {
     }
+    //endregion
 
+    //region Companion Object
     companion object{
+
+        //get article from JSON article
         fun parseJson(jsonArticle : JSONObject) : Article {
             val article = Article()
             article.author      = jsonArticle.getString("author")
@@ -55,5 +61,5 @@ class Article {
             return article
         }
     }
-
+    //endregion
 }

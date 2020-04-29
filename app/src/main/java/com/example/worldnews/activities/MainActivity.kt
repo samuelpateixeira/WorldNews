@@ -10,14 +10,23 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity() : AppCompatActivity() {
 
+    //create intent to open the News page
     var newsIntent = Intent(this, News::class.java)
-    var countryCode = "PT"
 
 
+
+
+
+
+    // country spinner item selected behaviour
     inner class OnCountrySpinnerSelectedListener : AdapterView.OnItemSelectedListener {
 
+        // when an item is selected
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             var text = parent!!.getItemAtPosition(position).toString()
+
+            // var for country selection
+            var countryCode = "PT"
 
             when (text) {
                 "Portugal" -> countryCode = "pt"
@@ -27,7 +36,7 @@ class MainActivity() : AppCompatActivity() {
                 "França" -> countryCode = "fr"
             }
 
-            //Toast.makeText(parent.context, text, Toast.LENGTH_SHORT).show()
+            // put extra info in intent
             newsIntent.putExtra("country","country=" + countryCode + "&")
             newsIntent.putExtra("countryPT", text)
         }
@@ -36,12 +45,15 @@ class MainActivity() : AppCompatActivity() {
             TODO("Not yet implemented")
         }
     }
+
+    // category spinner item selected behaviour
     inner class OnCategorySpinnerSelectedListener : AdapterView.OnItemSelectedListener {
 
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
             var text = parent!!.getItemAtPosition(position).toString()
 
-            var categoryCode = "geral"
+            //var for category selection
+            var categoryCode = "general"
 
             when (text) {
                 "negócios" -> categoryCode = "business"
@@ -53,7 +65,7 @@ class MainActivity() : AppCompatActivity() {
                 "tecnologia" -> categoryCode = "technology"
             }
 
-            //Toast.makeText(parent.context, text, Toast.LENGTH_SHORT).show()
+            // put extra info in intent
             newsIntent.putExtra("category","category=" + categoryCode + "&")
             newsIntent.putExtra("categoryPT",text)
         }
@@ -63,38 +75,43 @@ class MainActivity() : AppCompatActivity() {
         }
     }
 
-    //https://newsapi.org/v2/top-headlines?country=pt&apiKey=63faeb43aeff400a8cad6e075c433300
-
-    val articles : MutableList<Article> = ArrayList<Article>()
-
-
-
+    // api example link https://newsapi.org/v2/top-headlines?country=pt&apiKey=63faeb43aeff400a8cad6e075c433300
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        newsIntent = Intent(this , News::class.java)
 
+        //create intent to open the News page
+        newsIntent = Intent(this, News::class.java)
 
+        // create spinner adapter
         val spinnerAdapterCountries = ArrayAdapter.createFromResource(this, R.array.countries, android.R.layout.simple_spinner_item)
+        // set resource for dropdown item
         spinnerAdapterCountries.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        // set the adapter
         spinner_country.adapter = spinnerAdapterCountries
+        // set selection listener
         spinner_country.onItemSelectedListener = OnCountrySpinnerSelectedListener()
 
+        // create spinner for category selection
         val spinnerAdapterCategories = ArrayAdapter.createFromResource(this, R.array.categories, android.R.layout.simple_spinner_item)
+        // set resource for dropdown item
         spinnerAdapterCategories.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        // set the adapter
         spinner_category.adapter = spinnerAdapterCategories
+        // set selection listener
         spinner_category.onItemSelectedListener = OnCategorySpinnerSelectedListener()
 
 
-
-    btn_check_news.setOnClickListener(){
-        //Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
-        startActivity(newsIntent)
-        }
+        // set "check news" button click listener
+        btn_check_news.setOnClickListener(){
+            // start the intent to open the news page
+            startActivity(newsIntent)
+            }
 
     }
 
+    // important API data
     companion object {
         const val BASE_API = "https://newsapi.org/v2/"
         const val PATH = "top-headlines?"
