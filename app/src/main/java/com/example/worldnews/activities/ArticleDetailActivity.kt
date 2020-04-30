@@ -41,7 +41,7 @@ class ArticleDetailActivity : AppCompatActivity() {
             title = it
         }
 
-        // set my custom WebViewClient
+        // Set my custom WebViewClient
         webView_article.webViewClient = MyWebClient()
     }
 
