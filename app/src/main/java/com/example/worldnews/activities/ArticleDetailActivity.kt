@@ -45,14 +45,14 @@ class ArticleDetailActivity : AppCompatActivity() {
         webView_article.webViewClient = MyWebClient()
     }
 
-    //when creating the options menu (top bar)
+    // when creating the options menu (top bar)
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         //inflate this inside
         menuInflater.inflate(R.menu.menu_article, menu)
         return true
     }
 
-    //set behaviour for when an item is clicked in the top bar
+    // set behaviour for when an item is clicked in the top bar
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         // when action_share is clicked
