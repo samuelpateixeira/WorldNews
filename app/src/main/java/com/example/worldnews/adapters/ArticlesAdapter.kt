@@ -17,7 +17,7 @@ import java.lang.Exception
 import java.net.MalformedURLException
 import java.net.URL
 
-class ArticlesAdapter(context: Context, objects : ArrayList<Article>) : ArrayAdapter<Article>(context, R.layout.article_list_item, objects ) {
+class ArticlesAdapter(context: Context, objects : ArrayList<Article>) : ArrayAdapter<Article>(context, R.layout.article_list_item, objects) {
 
     var imageLoaded : Array<Boolean> = Array(22) {false}
 
@@ -81,7 +81,7 @@ class ArticlesAdapter(context: Context, objects : ArrayList<Article>) : ArrayAda
                         //if (!imageLoaded[position]) { // if image hasn't been loaded
                             // get url to image
                             val url = URL(currentArticle.urlToImage)
-                            //put the image bitmap in the article object
+                            // put the image bitmap in the article object
                             currentArticle.image = BitmapFactory.decodeStream(url.openConnection().getInputStream()) // or //val input = url.openStream() //val bmp = BitmapFactory.decodeStream(input) //return bmp
                             imageLoaded[position] = true    // image is loaded
                         //}
