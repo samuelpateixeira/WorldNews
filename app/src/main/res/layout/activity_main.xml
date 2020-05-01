@@ -12,6 +12,140 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#333"
+            android:layout_marginBottom="2dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="negócios"
+                android:textColor="#fff"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textSize="20sp"
+                android:id="@+id/tv_business"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#333"
+            android:layout_marginBottom="2dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="entertenimento"
+                android:textColor="#fff"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textSize="20sp"
+                android:id="@+id/tv_entertainment"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#333"
+            android:layout_marginBottom="2dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="geral"
+                android:textColor="#fff"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textSize="20sp"
+                android:id="@+id/tv_general"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#333"
+            android:layout_marginBottom="2dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="saúde"
+                android:textColor="#fff"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textSize="20sp"
+                android:id="@+id/tv_health"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#333"
+            android:layout_marginBottom="2dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="ciência"
+                android:textColor="#fff"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textSize="20sp"
+                android:id="@+id/tv_science"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#333"
+            android:layout_marginBottom="2dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="desporto"
+                android:textColor="#fff"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textSize="20sp"
+                android:id="@+id/tv_sports"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#333"
+            android:layout_marginBottom="2dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="tecnologia"
+                android:textColor="#fff"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:textSize="20sp"
+                android:id="@+id/tv_technology"
+                />
+        </FrameLayout>
+<!--
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,7 +196,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ver Notícias"/>
-
+-->
     </LinearLayout>
 
 </ScrollView>

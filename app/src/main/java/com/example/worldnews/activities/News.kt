@@ -15,10 +15,10 @@ class News : AppCompatActivity() {
     // properties
     val articles : MutableList<Article> = ArrayList<Article>()
     val context = this
-    var countryPath = ""
+    //var countryPath = ""
     var categoryPath = ""
-    var countryPT = ""
-    var categoryPT = ""
+    //var countryPT = ""
+    var categoryWord = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,14 +29,14 @@ class News : AppCompatActivity() {
 
         // get intent extras
         val bundle = intent.extras
-        countryPath = bundle!!.getString("country")!!
-        categoryPath = bundle.getString("category")!!
-        countryPT = bundle.getString("countryPT")!!
-        categoryPT = bundle.getString("categoryPT")!!
+        //countryPath = bundle!!.getString("country")!!
+        categoryPath = bundle!!.getString("categoryCode")!!
+        //countryPT = bundle.getString("countryWord")!!
+        categoryWord = bundle.getString("categoryWord")!!
 
 
         // write title of page
-        tv_title.text = categoryPT + " em " + countryPT
+        tv_title.text = categoryWord
 
         // create and set the adapter to the list view
         val articlesAdapter = ArticlesAdapter(this, articles as ArrayList<Article>)
@@ -48,7 +48,7 @@ class News : AppCompatActivity() {
             override fun doInBackground(vararg params: Void?): String {
 
                 // get URL for API call
-                val url = URL(MainActivity.BASE_API + MainActivity.PATH + countryPath + categoryPath + MainActivity.API_KEY)
+                val url = URL(MainActivity.BASE_API + MainActivity.PATH + categoryPath + MainActivity.API_KEY)
 
                 // get URL content (JSON)
                 val urlContent = url.readText(Charset.defaultCharset())

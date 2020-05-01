@@ -77,12 +77,58 @@ class MainActivity() : AppCompatActivity() {
 
     // api example link https://newsapi.org/v2/top-headlines?country=pt&apiKey=63faeb43aeff400a8cad6e075c433300
 
+    // adiciona os intent.extras
+    fun prepareIntent(categoryWord: String, categoryCode: String) {
+        newsIntent.putExtra("categoryWord", categoryWord)
+        newsIntent.putExtra("categoryCode", "category=" + categoryCode + "&")
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         //create intent to open the News page
         newsIntent = Intent(this, News::class.java)
+
+        //region definir clickListeners para as categorias
+        tv_business.setOnClickListener {
+            prepareIntent("negócios", "business")
+            startActivity(newsIntent)
+        }
+
+        tv_entertainment.setOnClickListener {
+            prepareIntent("entretenimento", "entertainment")
+            startActivity(newsIntent)
+        }
+
+        tv_general.setOnClickListener {
+            prepareIntent("geral", "general")
+            startActivity(newsIntent)
+        }
+
+        tv_health.setOnClickListener {
+            prepareIntent("saúde", "health")
+            startActivity(newsIntent)
+        }
+
+        tv_science.setOnClickListener {
+            prepareIntent("ciência", "science")
+            startActivity(newsIntent)
+        }
+
+        tv_sports.setOnClickListener {
+            prepareIntent("desporto", "sports")
+            startActivity(newsIntent)
+        }
+
+        tv_technology.setOnClickListener {
+            prepareIntent("tecnologia", "technology")
+            startActivity(newsIntent)
+        }
+
+        //endregion
+
+/*
 
         // create spinner adapter
         val spinnerAdapterCountries = ArrayAdapter.createFromResource(this, R.array.countries, android.R.layout.simple_spinner_item)
@@ -108,6 +154,8 @@ class MainActivity() : AppCompatActivity() {
             // start the intent to open the news page
             startActivity(newsIntent)
             }
+
+            */
 
     }
 

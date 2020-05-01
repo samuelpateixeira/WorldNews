@@ -87,11 +87,11 @@ class ArticleDetailActivity : AppCompatActivity() {
         }
 
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
-                url?.let {
-                    view?.loadUrl(it)
-                }
-                return true
+            url?.let {
+                view?.loadUrl(it)
             }
+            return true
+        }
 
 
     }
