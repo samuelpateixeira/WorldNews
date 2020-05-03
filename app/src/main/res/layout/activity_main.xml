@@ -3,8 +3,6 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     >
 
     <LinearLayout
@@ -13,12 +11,19 @@
         android:orientation="vertical"
         >
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:background="#333"
             android:layout_marginBottom="2dp"
             >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/credit_cards_payment"
+                android:padding="16dp"
+                />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -26,18 +31,24 @@
                 android:text="negócios"
                 android:textColor="#fff"
                 android:gravity="center_vertical"
-                android:paddingLeft="16dp"
+                android:paddingLeft="80dp"
                 android:textSize="20sp"
                 android:id="@+id/tv_business"
                 />
-        </FrameLayout>
+        </RelativeLayout>
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:background="#333"
             android:layout_marginBottom="2dp"
             >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/very_happy"
+                android:padding="16dp"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -45,18 +56,25 @@
                 android:text="entertenimento"
                 android:textColor="#fff"
                 android:gravity="center_vertical"
-                android:paddingLeft="16dp"
+                android:paddingLeft="80dp"
                 android:textSize="20sp"
                 android:id="@+id/tv_entertainment"
                 />
-        </FrameLayout>
+        </RelativeLayout>
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:background="#333"
             android:layout_marginBottom="2dp"
             >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/newspaper"
+                android:padding="16dp"
+                />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -64,18 +82,24 @@
                 android:text="geral"
                 android:textColor="#fff"
                 android:gravity="center_vertical"
-                android:paddingLeft="16dp"
+                android:paddingLeft="80dp"
                 android:textSize="20sp"
                 android:id="@+id/tv_general"
                 />
-        </FrameLayout>
+        </RelativeLayout>
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:background="#333"
             android:layout_marginBottom="2dp"
             >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/patch"
+                android:padding="16dp"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -83,18 +107,24 @@
                 android:text="saúde"
                 android:textColor="#fff"
                 android:gravity="center_vertical"
-                android:paddingLeft="16dp"
+                android:paddingLeft="80dp"
                 android:textSize="20sp"
                 android:id="@+id/tv_health"
                 />
-        </FrameLayout>
+        </RelativeLayout>
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:background="#333"
             android:layout_marginBottom="2dp"
             >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/electron"
+                android:padding="16dp"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -102,18 +132,24 @@
                 android:text="ciência"
                 android:textColor="#fff"
                 android:gravity="center_vertical"
-                android:paddingLeft="16dp"
+                android:paddingLeft="80dp"
                 android:textSize="20sp"
                 android:id="@+id/tv_science"
                 />
-        </FrameLayout>
+        </RelativeLayout>
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:background="#333"
             android:layout_marginBottom="2dp"
             >
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/running"
+                android:padding="16dp"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -121,30 +157,37 @@
                 android:text="desporto"
                 android:textColor="#fff"
                 android:gravity="center_vertical"
-                android:paddingLeft="16dp"
+                android:paddingLeft="80dp"
                 android:textSize="20sp"
                 android:id="@+id/tv_sports"
                 />
-        </FrameLayout>
+        </RelativeLayout>
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:background="#333"
             android:layout_marginBottom="2dp"
             >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/devices"
+                android:padding="16dp"
+                />
+
             <TextView
+                android:id="@+id/tv_technology"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="?android:attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:paddingLeft="80dp"
                 android:text="tecnologia"
                 android:textColor="#fff"
-                android:gravity="center_vertical"
-                android:paddingLeft="16dp"
-                android:textSize="20sp"
-                android:id="@+id/tv_technology"
-                />
-        </FrameLayout>
+                android:textSize="20sp" />
+        </RelativeLayout>
 <!--
         <LinearLayout
             android:layout_width="match_parent"

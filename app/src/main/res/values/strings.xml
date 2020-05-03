@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Latest News</string>
+    <string name="app_name">World News</string>
 
     <string-array name="countries">
         <item>Portugal</item>
