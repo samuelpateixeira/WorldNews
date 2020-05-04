@@ -59,6 +59,7 @@ class ArticlesAdapter(context: Context, objects : ArrayList<Article>) : ArrayAda
         // add the title and url to the intent
         intent.putExtra("title",currentArticle.title)
         intent.putExtra("url",currentArticle.url)
+        intent.putExtra("source", currentArticle.source)
 
         // set a click listener to start the intent
         articleView.setOnClickListener {

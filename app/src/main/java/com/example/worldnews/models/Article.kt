@@ -1,6 +1,7 @@
 package com.example.worldnews
 
 import android.graphics.Bitmap
+import android.util.Log
 import org.json.JSONObject
 
 class Article {
@@ -60,6 +61,9 @@ class Article {
             article.urlToImage  = jsonArticle.getString("urlToImage")
             article.publishedAt = jsonArticle.getString("publishedAt")
             article.content     = jsonArticle.getString("content")
+            var sourceObject    = jsonArticle.getJSONObject("source")
+            article.source      = sourceObject.getString("name")
+            Log.e("sourceDebug", "source: " + article.source)
 
             return article
         }

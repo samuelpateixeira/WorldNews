@@ -3,6 +3,7 @@ package com.example.worldnews
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebResourceRequest
@@ -16,8 +17,9 @@ import kotlinx.android.synthetic.main.activity_article_detail.*
 class ArticleDetailActivity : AppCompatActivity() {
 
     // properties
-    var url : String? = null
+    var articleUrl : String? = null
     var articleTitle : String? = null
+    var articleSource : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,19 +29,21 @@ class ArticleDetailActivity : AppCompatActivity() {
         val bundle = intent.extras
 
         bundle?.let {
-            url = it.getString("url")
+            articleUrl = it.getString("url")
             articleTitle = it.getString("title")
+            articleSource = it.getString("source")
         }
 
         // load article URL in the webView
-        url?.let {
+        articleUrl?.let {
             webView_article.loadUrl(it)
         }
 
         //set the article title
-        articleTitle?.let {
-            title = it
+        articleSource?.let {
+            title = it.decapitalize()
         }
+
 
         // set my custom WebViewClient
         webView_article.webViewClient = MyWebClient()
@@ -65,7 +69,7 @@ class ArticleDetailActivity : AppCompatActivity() {
             // set the "subject" extra
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, articleTitle)
             // set the "text" extra with the article URL
-            shareIntent.putExtra(Intent.EXTRA_TEXT, url)
+            shareIntent.putExtra(Intent.EXTRA_TEXT, articleUrl)
             // start the activity
             startActivity(Intent.createChooser(shareIntent, "Latest News Share"))
 

@@ -36,7 +36,7 @@ class News : AppCompatActivity() {
 
 
         // write title of page
-        tv_title.text = categoryWord
+        title = categoryWord.toString().capitalize()
 
         // create and set the adapter to the list view
         val articlesAdapter = ArticlesAdapter(this, articles as ArrayList<Article>)
